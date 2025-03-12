@@ -1,8 +1,22 @@
 const sumAll = function (num1, num2) {
   let finalSum = 0;
+  let temp = 0;
+  
+  if (num1 < 0 || num2 < 0) {
+    return "ERROR";
+  }
+
+  if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
+    return "ERROR";
+  }
+
+  if (num1 > num2) {
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+  }
 
   for (let n = num1; n <= num2; n++) {
-    //console.log(n);
     finalSum = finalSum + n;
   }
   return finalSum;
