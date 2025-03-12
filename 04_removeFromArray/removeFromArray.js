@@ -1,14 +1,17 @@
-const removeFromArray = function (array, fjern) {
-
+const removeFromArray = function (array, ...fjern) {
+  
+  return array.filter((item) => !fjern.includes(item));
 };
 
-removeFromArray([1, 2, 3, 4], 3);
+console.log(removeFromArray([1, 2, 3, 4], 3, 4));
 
 /*
-1) array + fjern
-2) Iterer igennem alle elementerne 
-3) Hvis array == fjern brug med splice() 
-4) Returner resuiltat 
+
+filter = gennemgår alle elementerne, og tjekker om funktionen inde i filter returner true, 
+hvis den gør, så returner den kun de tilfælde der er returneret true. 
+Vi har !fjern.includes(item))
+Hvis elementerne fra fjern er inkluderet i item, return false (!). 
+
 
 */
 
